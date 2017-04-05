@@ -1,6 +1,9 @@
 sudo: false
 
-language: erlang
+language: elixir
+
+elixir:
+ - 1.4.0
 
 otp_release:
  - 19.1
@@ -12,6 +15,7 @@ install: "true"
 before_install:
   - wget https://s3.amazonaws.com/rebar3/rebar3
   - chmod +x rebar3
+  - mix local.hex --force
 
 script:
   - ./rebar3 compile
